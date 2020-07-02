@@ -34,10 +34,10 @@ public class Employee {
         System.out.println("pay " + salary + " euro for " + name); //если не указать параметр, то вызовется этот метод как дефолтный
     }
 
-    public void pay(int bonus) {
+    public void pay(double bonus) {
         System.out.println("pay " + (salary + bonus) + " euro for " + name); //если указан, то вот этот
     }
 
-    public void work(){ //даже пустой метод жаёт возможность вызывать его у всех наследников
+    public void work() { //даже пустой метод жаёт возможность вызывать его у всех наследников
     }
 }

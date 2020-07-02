@@ -1,5 +1,7 @@
 package lesson2;
 
+import lesson2.hw2les3006.Programmer;
+
 public class DBMock {
     public static Employee[] getEmployees() {
         Programmer programmer = new Programmer("Vasya", 2000.0);
