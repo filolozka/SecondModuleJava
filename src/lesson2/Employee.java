@@ -1,6 +1,6 @@
 package lesson2;
 
-public class Employee {
+public abstract class Employee {
     public String getName() {
         return name;
     }
@@ -38,9 +38,8 @@ public class Employee {
         System.out.println("pay " + (salary + bonus) + " euro for " + name); //если указан, то вот этот
     }
 
-    public void work() { //даже пустой метод жаёт возможность вызывать его у всех наследников
-    }
+    public abstract void work();
 
-    public void codeReview() {
+    public void codeReview() {  //в данном случае, это затычка, это неправильно
     }
 }

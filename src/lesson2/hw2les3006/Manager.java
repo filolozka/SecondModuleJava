@@ -14,4 +14,8 @@ public class Manager extends Employee {
     public void pay() {
         System.out.println("pay salary and manager's bonus " + (super.getSalary() + managerBonus) + " euro for " + super.getName());
     }
+
+    public void work(){
+        System.out.println("I'm working hard");
+    }
 }

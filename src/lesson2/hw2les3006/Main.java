@@ -16,7 +16,7 @@ public class Main {
         Employee tester = new Tester("Valery", 50.00);
         Employee project = new LazyEmployee("Andrea", 90.00);
         Employee tester2 = new Tester("Sveta", 60.00);
-        Employee product = new Employee("Jane", 75.00);
+        Employee product = new Tester("Jane", 75.00);
         Employee manager = new Manager("Vika", 150.00, 30.00);
 
         Employee[] allEmployees = new Employee[]{

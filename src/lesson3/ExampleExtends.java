@@ -1,8 +1,7 @@
 package lesson3;
 
 import lesson2.Employee;
-import lesson2.hw2les3006.JavaProgrammer;
-import lesson2.hw2les3006.Programmer;
+import lesson2.hw2les3006.*;
 
 public class ExampleExtends {
     public static void main(String[] args) {
@@ -10,17 +9,17 @@ public class ExampleExtends {
     }
 
     public static Employee[] employees = {
-            new Programmer("kolya1", 20.00),
-            new Programmer("kolya2", 20.00),
-            new Programmer("kolya3", 20.00),
-            new Programmer("kolya4", 20.00),
+            new CProgrammer("kolya1", 20.00),
+            new CProgrammer("kolya2", 20.00),
+            new JavaScriptProgrammer("kolya3", 20.00),
+            new JavaScriptProgrammer("kolya4", 20.00),
             new JavaProgrammer("petr1", 30.00),
             new JavaProgrammer("petr2", 30.00),
             new JavaProgrammer("petr3", 30.00),
             new JavaProgrammer("petr4", 30.00),
-            new Employee("Masha1", 30),
-            new Employee("Masha2", 30),
-            new Employee("Masha3", 30),
+            new JavaProgrammer("Masha1", 30),
+            new JavaProgrammer("Masha2", 30),
+            new Manager("Masha3", 30, 10),
     };
 
     public static Employee[] getEmployees() {

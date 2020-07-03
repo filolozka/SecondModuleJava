@@ -15,7 +15,7 @@ public class EmployeeArray {
         this.nameOfOrganization = name;
     }
 
-    public Employee[] getEmployees(Employee... args) {  //пока не справилась с методом, который собирает массив с неизвестным количеством аргументов, еще подумаю
+    public Employee[] getEmployees() {  //пока не справилась с методом, который собирает массив с неизвестным количеством аргументов, еще подумаю
             return employees;
     }
 
@@ -31,23 +31,23 @@ public class EmployeeArray {
         employee.pay();
     }
 
-    public void payAll(Employee[] allEmployees) {
-        for (Employee employee : allEmployees) {
+    public void payAll() {
+        for (Employee employee : employees) {
             System.out.println(employee.getName());
             payForEmployee(employee);
             System.out.println("-----");
         }
     }
 
-    public void workAll(Employee[] allEmployees) {
-        for (Employee employee : allEmployees) {
+    public void workAll() {
+        for (Employee employee : employees) {
             employee.work();
             System.out.println("-----");
         }
     }
 
-    public void printAll(Employee[] allEmployees) {
-        for (Employee employee : allEmployees) {
+    public void printAll() {
+        for (Employee employee : employees) {
             System.out.println(employee.getName());
             System.out.println("-----");
         }
@@ -80,7 +80,7 @@ public class EmployeeArray {
         Employee tester = new Tester("Valery", 50.00);
         Employee project = new LazyEmployee("Andrea", 90.00);
         Employee tester2 = new Tester("Sveta", 60.00);
-        Employee product = new Employee("Jane", 75.00);
+        Employee product = new Tester("Jane", 75.00);
         Employee manager = new Manager("Vika", 150.00, 30.00);
 
         Employee[] allEmployees = new Employee[]{
@@ -95,6 +95,6 @@ public class EmployeeArray {
         };
 
         EmployeeArray akelius = new EmployeeArray("Akelius", allEmployees);
-        akelius.payAll(allEmployees);
+        akelius.payAll();
     }
 }
