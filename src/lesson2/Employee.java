@@ -40,4 +40,7 @@ public class Employee {
 
     public void work() { //даже пустой метод жаёт возможность вызывать его у всех наследников
     }
+
+    public void codeReview() {
+    }
 }
