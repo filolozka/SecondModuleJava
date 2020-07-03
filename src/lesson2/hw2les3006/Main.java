@@ -10,6 +10,7 @@ public class Main {
         Programmer cProgrammer = new CProgrammer("Kolya", 60.00);
         Programmer javaCoder = new JavaProgrammer("Paul", 100.00);
         Programmer jsCoder = new JavaScriptProgrammer("Petra", 70.00);
+
         Programmer[] programmers = new Programmer[]{cProgrammer, javaCoder, jsCoder};
 
         Employee tester = new Tester("Valery", 50.00);
@@ -19,7 +20,14 @@ public class Main {
         Employee manager = new Manager("Vika", 150.00, 30.00);
 
         Employee[] allEmployees = new Employee[]{
-                tester, tester2, product, project, cProgrammer, javaCoder, jsCoder, manager
+                tester,
+                tester2,
+                product,
+                project,
+                cProgrammer,
+                javaCoder,
+                jsCoder,
+                manager
         };
 
         System.out.println("Employees are: ");

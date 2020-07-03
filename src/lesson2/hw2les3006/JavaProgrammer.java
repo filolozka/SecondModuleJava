@@ -1,8 +1,14 @@
 package lesson2.hw2les3006;
 
 public class JavaProgrammer extends Programmer {
-    String programmingLanguage = "Java";
-    programmingLanguage java = lesson2.hw2les3006.programmingLanguage.JAVA;
+    private String programmingLanguage = "Java";
+
+    public String getProgrammingLanguage() {
+        return programmingLanguage;
+    }
+
+    /*programmingLanguage java = lesson2.hw2les3006.programmingLanguage.JAVA;
+     */
 
     public JavaProgrammer(String name, double salary) {
         super(name, salary);

@@ -1,9 +1,14 @@
 package lesson2.hw2les3006;
 
 public class JavaScriptProgrammer extends Programmer {
-    String programmingLanguage = "JavaScript";
-    programmingLanguage js = lesson2.hw2les3006.programmingLanguage.JAVASCRIPT;
+    private String programmingLanguage = "JavaScript";
 
+    public String getProgrammingLanguage() {
+        return programmingLanguage;
+    }
+
+    /*programmingLanguage js = lesson2.hw2les3006.programmingLanguage.JAVASCRIPT;
+*/
     public JavaScriptProgrammer(String name, double salary) {
         super(name, salary);
     }
