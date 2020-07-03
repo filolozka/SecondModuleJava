@@ -1,8 +1,6 @@
-package lesson2.hw2les3006;
+package lessonsExamples.lesson2.hw2les3006;
 
-import lesson2.Employee;
-import lesson2.LazyEmployee;
-import lesson2.Tester;
+import entity.*;
 
 public class Main {
 

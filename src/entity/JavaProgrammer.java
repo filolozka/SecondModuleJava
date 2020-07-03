@@ -1,4 +1,4 @@
-package lesson2.hw2les3006;
+package entity;
 
 public class JavaProgrammer extends Programmer {
     private String programmingLanguage = "Java";
@@ -7,7 +7,7 @@ public class JavaProgrammer extends Programmer {
         return programmingLanguage;
     }
 
-    /*programmingLanguage java = lesson2.hw2les3006.programmingLanguage.JAVA;
+    /*programmingLanguage java = entity.programmingLanguage.JAVA;
      */
 
     public JavaProgrammer(String name, double salary) {

@@ -1,4 +1,4 @@
-package lesson2.hw2les3006;
+package entity;
 
 public class JavaScriptProgrammer extends Programmer {
     private String programmingLanguage = "JavaScript";
@@ -7,7 +7,7 @@ public class JavaScriptProgrammer extends Programmer {
         return programmingLanguage;
     }
 
-    /*programmingLanguage js = lesson2.hw2les3006.programmingLanguage.JAVASCRIPT;
+    /*programmingLanguage js = entity.programmingLanguage.JAVASCRIPT;
 */
     public JavaScriptProgrammer(String name, double salary) {
         super(name, salary);

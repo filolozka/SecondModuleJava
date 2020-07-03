@@ -1,4 +1,4 @@
-package lesson2;
+package entity;
 
 public class LazyEmployee extends Employee {
 

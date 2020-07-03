@@ -1,6 +1,6 @@
-package trash;
+package lessonsExamples;
 
-import lesson2.Employee;
+import entity.Employee;
 
 public class Main {
     public Employee[] getEmployees(Employee... args) {

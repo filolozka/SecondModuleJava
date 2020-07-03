@@ -1,6 +1,6 @@
-package lesson2.hw2les3006;
+package entity;
 
-import lesson2.Employee;
+import entity.Employee;
 
 public class Manager extends Employee {
     double managerBonus;

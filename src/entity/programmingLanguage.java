@@ -1,4 +1,4 @@
-package lesson2.hw2les3006;
+package entity;
 
 public enum programmingLanguage {
     JAVA,

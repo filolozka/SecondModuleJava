@@ -1,4 +1,7 @@
-package lesson2;
+package lessonsExamples.lesson2;
+
+import repository.DBMock;
+import entity.Employee;
 
 public class Main {
     public static void main(String[] args) {

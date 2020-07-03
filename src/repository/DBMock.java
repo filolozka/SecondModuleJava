@@ -1,11 +1,11 @@
-package lesson2;
+package repository;
 
-import lesson2.hw2les3006.Programmer;
+import entity.*;
 
 public class DBMock {
     public static Employee[] getEmployees() {
-        Programmer programmer = new Programmer("Vasya", 2000.0);
-        Programmer programmer2 = new Programmer("Katya", 3000.0);
+        Programmer programmer = new JavaProgrammer("Vasya", 2000.0);
+        Programmer programmer2 = new JavaScriptProgrammer("Katya", 3000.0);
         Tester tester = new Tester("Petya", 1000.0);
         Tester tester2 = new Tester("Matt", 1800.0);
 

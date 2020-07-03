@@ -1,4 +1,4 @@
-package lesson2;
+package entity;
 
 public abstract class Employee {
     public String getName() {
@@ -17,7 +17,7 @@ public abstract class Employee {
         this.salary = salary;
     }
 
-    private String name;
+    protected String name;
     private double salary;
 
     public Employee(String name, double salary) {

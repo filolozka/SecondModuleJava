@@ -1,10 +1,6 @@
-package lesson3.hw3les0207;
+package repository;
 
-
-import lesson2.Employee;
-import lesson2.LazyEmployee;
-import lesson2.Tester;
-import lesson2.hw2les3006.*;
+import entity.*;
 
 public class EmployeeArray {
     private Employee[] employees;

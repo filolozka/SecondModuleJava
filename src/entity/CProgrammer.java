@@ -1,4 +1,4 @@
-package lesson2.hw2les3006;
+package entity;
 
 public class CProgrammer extends Programmer {
     String programmingLanguage = "C";
@@ -7,7 +7,7 @@ public class CProgrammer extends Programmer {
         return programmingLanguage;
     }
 
-    /*programmingLanguage cLanguage = lesson2.hw2les3006.programmingLanguage.C;*/
+    /*programmingLanguage cLanguage = entity.programmingLanguage.C;*/
 
     public CProgrammer(String name, double salary) {
         super(name, salary);

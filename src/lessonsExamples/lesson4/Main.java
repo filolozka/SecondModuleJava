@@ -1,10 +1,10 @@
-package lesson4;
+package lessonsExamples.lesson4;
 
-import lesson2.DBMock;
-import lesson2.Employee;
-import lesson2.hw2les3006.CProgrammer;
-import lesson2.hw2les3006.Manager;
-import lesson3.hw3les0207.EmployeeArray;
+import repository.DBMock;
+import entity.Employee;
+import entity.CProgrammer;
+import entity.Manager;
+import repository.EmployeeArray;
 
 public class Main {
     public static void main(String[] args) {

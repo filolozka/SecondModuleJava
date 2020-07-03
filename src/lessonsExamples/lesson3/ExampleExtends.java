@@ -1,7 +1,6 @@
-package lesson3;
+package lessonsExamples.lesson3;
 
-import lesson2.Employee;
-import lesson2.hw2les3006.*;
+import entity.*;
 
 public class ExampleExtends {
     public static void main(String[] args) {
