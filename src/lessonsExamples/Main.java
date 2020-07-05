@@ -1,6 +1,6 @@
 package lessonsExamples;
 
-import entity.Employee;
+import emloyeesProject.repository.entity.Employee;
 
 public class Main {
     public Employee[] getEmployees(Employee... args) {

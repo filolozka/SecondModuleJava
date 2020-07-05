@@ -1,4 +1,4 @@
-package entity;
+package emloyeesProject.repository.entity;
 
 public class CProgrammer extends Programmer {
     String programmingLanguage = "C";
@@ -7,7 +7,7 @@ public class CProgrammer extends Programmer {
         return programmingLanguage;
     }
 
-    /*programmingLanguage cLanguage = entity.programmingLanguage.C;*/
+    /*programmingLanguage cLanguage = emloyeesProject.repository.entity.programmingLanguage.C;*/
 
     public CProgrammer(String name, double salary) {
         super(name, salary);

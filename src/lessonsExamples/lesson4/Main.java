@@ -1,10 +1,10 @@
 package lessonsExamples.lesson4;
 
-import repository.DBMock;
-import entity.Employee;
-import entity.CProgrammer;
-import entity.Manager;
-import repository.EmployeeArray;
+import emloyeesProject.repository.DBMock;
+import emloyeesProject.repository.entity.Employee;
+import emloyeesProject.repository.entity.CProgrammer;
+import emloyeesProject.repository.entity.Manager;
+import emloyeesProject.repository.EmployeeArray;
 
 public class Main {
     public static void main(String[] args) {

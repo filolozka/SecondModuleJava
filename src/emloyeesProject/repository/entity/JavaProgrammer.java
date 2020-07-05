@@ -1,4 +1,4 @@
-package entity;
+package emloyeesProject.repository.entity;
 
 public class JavaProgrammer extends Programmer {
     private String programmingLanguage = "Java";
@@ -7,7 +7,7 @@ public class JavaProgrammer extends Programmer {
         return programmingLanguage;
     }
 
-    /*programmingLanguage java = entity.programmingLanguage.JAVA;
+    /*programmingLanguage java = emloyeesProject.repository.entity.programmingLanguage.JAVA;
      */
 
     public JavaProgrammer(String name, double salary) {

@@ -1,6 +1,6 @@
-package repository;
+package emloyeesProject.repository;
 
-import entity.*;
+import emloyeesProject.repository.entity.*;
 
 public class EmployeeArray {
     private Employee[] employees;

@@ -1,6 +1,6 @@
 package lessonsExamples.lesson3;
 
-import entity.*;
+import emloyeesProject.repository.entity.*;
 
 public class ExampleExtends {
     public static void main(String[] args) {

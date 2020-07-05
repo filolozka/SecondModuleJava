@@ -1,6 +1,6 @@
 package lessonsExamples.lesson2.hw2les3006;
 
-import entity.*;
+import emloyeesProject.repository.entity.*;
 
 public class Main {
 
