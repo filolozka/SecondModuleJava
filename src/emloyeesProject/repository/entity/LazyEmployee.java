@@ -1,4 +1,4 @@
-package entity;
+package emloyeesProject.repository.entity;
 
 public class LazyEmployee extends Employee {
 

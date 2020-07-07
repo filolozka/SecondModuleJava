@@ -1,4 +1,4 @@
-package entity;
+package emloyeesProject.repository.entity;
 
 public class JavaScriptProgrammer extends Programmer {
     private String programmingLanguage = "JavaScript";
@@ -7,7 +7,7 @@ public class JavaScriptProgrammer extends Programmer {
         return programmingLanguage;
     }
 
-    /*programmingLanguage js = entity.programmingLanguage.JAVASCRIPT;
+    /*programmingLanguage js = emloyeesProject.repository.entity.programmingLanguage.JAVASCRIPT;
 */
     public JavaScriptProgrammer(String name, double salary) {
         super(name, salary);

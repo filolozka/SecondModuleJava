@@ -1,9 +1,9 @@
 package lessonsExamples.lesson3;
 
-import entity.CProgrammer;
-import entity.Employee;
-import entity.JavaProgrammer;
-import entity.Programmer;
+import emloyeesProject.repository.entity.CProgrammer;
+import emloyeesProject.repository.entity.Employee;
+import emloyeesProject.repository.entity.JavaProgrammer;
+import emloyeesProject.repository.entity.Programmer;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,6 +1,4 @@
-package entity;
-
-import entity.Employee;
+package emloyeesProject.repository.entity;
 
 public class Manager extends Employee {
     double managerBonus;

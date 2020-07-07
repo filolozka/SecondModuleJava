@@ -1,6 +1,4 @@
-package entity;
-
-import entity.Employee;
+package emloyeesProject.repository.entity;
 
 public abstract class Programmer extends Employee {
     public Programmer(String name, double salary) {
