@@ -6,6 +6,26 @@ public class Tree extends Plant {
     private double initialGrowth = 150; //первоначальный рост в сантиметрах
     private String name;
     private double growthNow;
+    private int summerGrowth = 15;
+    private int sprintGrowth = 15;
+    private int autumnGrowth = 5;
+    private int winterGrowth = 5;
+
+    public int getSummerGrowth() {
+        return summerGrowth;
+    }
+
+    public int getSpringGrowth() {
+        return sprintGrowth;
+    }
+
+    public int getAutumnGrowth() {
+        return autumnGrowth;
+    }
+
+    public int getWinterGrowth() {
+        return winterGrowth;
+    }
 
     public Tree(String name) {
         this.name = name;
@@ -21,28 +41,4 @@ public class Tree extends Plant {
         return initialGrowth;
     }
 
-    @Override
-    public double seasonSpring(double growthNow) {
-        return growthNow + 15;
-    }
-
-    @Override
-    public double seasonSummer(double growthNow) {
-        return growthNow + 15;
-    }
-
-    @Override
-    public double seasonAutumn(double growthNow) {
-        return growthNow + 5;
-    }
-
-    @Override
-    public double seasonWinter(double growthNow) {
-        return growthNow + 5;
-    }
-
-    public double yearOfGrowing(){
-        growthNow = seasonWinter(seasonAutumn(seasonSummer(seasonSpring(initialGrowth))));
-        return growthNow;
-    };
 }

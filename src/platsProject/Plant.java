@@ -3,8 +3,17 @@ package platsProject;
 public abstract class Plant {
     private double growthNow;
     private double initialGrowth;
-    private double increase;
     private String name;
+    private int summerGrowth = 0;
+    private int sprintGrowth = 0;
+    private int autumnGrowth = 0;
+    private int winterGrowth = 0;
+
+    public abstract int getSummerGrowth();
+    public abstract int getSpringGrowth();
+    public abstract int getAutumnGrowth();
+    public abstract int getWinterGrowth();
+
 
     public String getName() {
         return name;
@@ -30,24 +39,32 @@ public abstract class Plant {
         this.initialGrowth = initialGrowth;
     }
 
-    public double getIncrease() {
-        return increase;
+    protected double seasonSpring() {
+        setGrowthNow(getGrowthNow() + getSpringGrowth()); //задаём значение, взяв нынешнее значение атрибута growthNow
+        return getGrowthNow();
     }
 
-    public void setIncrease(double increase) {
-        this.increase = increase;
+
+    protected double seasonSummer() {
+        setGrowthNow(getGrowthNow() + getSummerGrowth());
+        return getGrowthNow();
     }
 
-    public abstract double seasonSpring(double growthNow);
+    protected double seasonAutumn() {
+        setGrowthNow(getGrowthNow() + getAutumnGrowth());
+        return getGrowthNow();
+    }
 
-    public abstract double seasonSummer(double growthNow);
+    protected double seasonWinter() {
+        setGrowthNow(getGrowthNow() + getWinterGrowth());
+        return getGrowthNow();
+    }
 
-    public abstract double seasonAutumn(double growthNow);
-
-    public abstract double seasonWinter(double growthNow);
-
-    public double yearOfGrowing(){
-        growthNow = seasonWinter(seasonAutumn(seasonSummer(seasonSpring(initialGrowth))));
-        return growthNow;
-    };
+        public double yearOfGrowing() {
+            seasonSpring();
+            seasonSummer();
+            seasonAutumn();
+            seasonWinter();
+            return growthNow;
+        }
 }

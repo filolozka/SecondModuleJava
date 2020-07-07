@@ -11,14 +11,10 @@ public class PlantsArray {
         return plants;
     }
 
-    public void seasonOfGrowing(){
-
-    }
-
     public void yearOfGrow(){
         for (Plant plant: plants) {
             System.out.println(plant.getName());
-            yearOfGrow();
+            plant.yearOfGrowing();
         }
     }
 

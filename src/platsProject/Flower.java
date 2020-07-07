@@ -4,10 +4,44 @@ public class Flower extends Plant {
     private double initialGrowth = 0;
     private String name;
     private double growthNow;
+    private int springGrowth = 20;
+    private int summerGrowth = 10;
+    private int autumnGrowth = 0;
+    private int winterGrowth = 0;
 
     public Flower(String name) {
         this.name = name;
     }
+
+    @Override
+    public int getSpringGrowth() {
+        return springGrowth;
+    }
+
+    @Override
+    public int getAutumnGrowth() {
+        return autumnGrowth;
+    }
+
+    @Override
+    public int getWinterGrowth() {
+        return winterGrowth;
+    }
+
+    @Override
+    public int getSummerGrowth() {
+        return summerGrowth;
+    }
+
+    public double getGrowthNow() {
+        return growthNow;
+    }
+
+    public void setGrowthNow(double growthNow) {
+        this.growthNow = growthNow;
+    }
+
+
     public String getName() {
         return name;
     }
@@ -19,28 +53,5 @@ public class Flower extends Plant {
         return initialGrowth;
     }
 
-    @Override
-    public double seasonSpring(double growthNow) {
-        return growthNow + 20;
-    }
 
-    @Override
-    public double seasonSummer(double growthNow) {
-        return growthNow + 10;
-    }
-
-    @Override
-    public double seasonAutumn(double growthNow) {
-        return growthNow;
-    }
-
-    @Override
-    public double seasonWinter(double growthNow) {
-        return growthNow * 0;
-    }
-
-    public double yearOfGrowing(){
-        growthNow = seasonWinter(seasonAutumn(seasonSummer(seasonSpring(initialGrowth))));
-        return growthNow;
-    };
 }

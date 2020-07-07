@@ -4,45 +4,50 @@ public class Bushes extends Plant {
     private double initialGrowth = 40;
     private String name;
     private double growthNow;
+    private int summerGrowth = 10;
+    private int sprintGrowth = 10;
+    private int autumnGrowth = 3;
 
     public Bushes(String name) {
         this.name = name;
+        this.growthNow = initialGrowth;
     }
 
-    public String getName() {
-        return name;
+    @Override
+    public int getWinterGrowth() {
+        return winterGrowth;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    private int winterGrowth = 0;
+
+    @Override
+    public int getSummerGrowth() {
+        return summerGrowth;
+    }
+
+    @Override
+    public int getSpringGrowth() {
+        return sprintGrowth;
+    }
+
+    @Override
+    public int getAutumnGrowth() {
+        return autumnGrowth;
+    }
+
+
+
+    public double getGrowthNow() {
+        return growthNow;
+    }
+
+    public void setGrowthNow(double growthNow) {
+        this.growthNow = growthNow;
     }
 
     public double getInitialGrowth() {
         return initialGrowth;
     }
 
-    @Override
-    public double seasonSpring(double growthNow) {
-        return growthNow + 10;
-    }
 
-    @Override
-    public double seasonSummer(double growthNow) {
-        return growthNow + 10;
-    }
-
-    @Override
-    public double seasonAutumn(double growthNow) {
-        return growthNow + 3;
-    }
-
-    @Override
-    public double seasonWinter(double growthNow) {
-        return growthNow;
-    }
-
-    public double yearOfGrowing(){
-        growthNow = seasonWinter(seasonAutumn(seasonSummer(seasonSpring(initialGrowth))));
-        return growthNow;
-    };
 }
