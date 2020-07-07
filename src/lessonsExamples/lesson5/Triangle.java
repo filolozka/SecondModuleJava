@@ -1,14 +1,24 @@
 package lessonsExamples.lesson5;
 
-public class Triangle extends Figure {
-    private int numberOfSides = 3;
+//Площадь треугольника равна произведению половины основания треугольника (a) на его высоту (h)
 
-    public Triangle(int sideLength) {
-        super(sideLength);
+public class Triangle extends Figure {
+    private double height;
+    private String name = "Треугольник";
+
+    public Triangle(double height, double sideLength) {
+        super(sideLength);  //здесь = основание треугольника
+        this.height = height;
+        super.setName(name);
     }
 
     @Override
-    public int getNumberOfSides() {
-        return numberOfSides;
+    public double findArea(){
+        setArea((getSideLength() / 2) * height);
+        return getArea();
+    }
+
+    public double getHeight() {
+        return height;
     }
 }

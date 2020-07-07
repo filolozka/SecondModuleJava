@@ -1,16 +1,23 @@
 package lessonsExamples.lesson5;
 
-public class Circle extends Figure {
-    private int sideLength;
-    private int area;
+//это произведение числа пи на квадрат радиуса
 
-    public Circle(int sideLength) {
-        super(sideLength);
+public class Circle extends Figure {
+    private double radius;
+    private String name = "Круг";
+
+    public Circle(double radius) {
+        this.radius = radius;
+        super.setName(name);
     }
 
     @Override
-    public int findArea() {
-        area = (int) (sideLength * sideLength * Math.PI);
+    public double findArea() {
+        setArea(radius * radius * Math.PI);
         return getArea();
+    }
+
+    public double getRadius() {
+        return radius;
     }
 }
