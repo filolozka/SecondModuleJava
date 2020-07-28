@@ -1,7 +1,10 @@
 package hotel;
 
-// - метраж, кровать, количество людей, ванная, статус свободна/занята/забронирована
-
 abstract public class Room {
-    boolean free;
+    int numberRooms;
+    int numberPeople;
+    int metres;
+
+    abstract public void setNumberPeople(int numberPeople);
+    abstract public int getNumberPeople();
 }

@@ -5,17 +5,13 @@ package hotel;
 public class Guest {
     private String firstName;
     private String secondName;
-    private double creditCard;
-    private boolean regularCustomer;
+    private String creditCard;
     private boolean vip;
 
-    public Guest(String firstName, String secondName, double creditCard) {
+    public Guest(String firstName, String secondName, String creditCard) {
         this.firstName = firstName;
         this.secondName = secondName;
         this.creditCard = creditCard;
-    }
-
-    public Guest() {
     }
 
     public String getFirstName() {
@@ -34,11 +30,28 @@ public class Guest {
         this.secondName = secondName;
     }
 
-    public double getCreditCard() {
+    public String getCreditCard() {
         return creditCard;
     }
 
-    public void setCreditCard(double creditCard) {
+    public void setCreditCard(String creditCard) {
         this.creditCard = creditCard;
+    }
+
+    public boolean isVip() {
+        return vip;
+    }
+
+    public void setVip(boolean vip) {
+        this.vip = vip;
+    }
+
+    @Override
+    public String toString() {
+        return "Guest{" +
+                "firstName='" + firstName + '\'' +
+                ", secondName='" + secondName + '\'' +
+                ", vip=" + vip +
+                '}';
     }
 }
