@@ -45,13 +45,14 @@ public class Main {
     public static int checkType(String number) {
         int typeVisa = 1;
         int typeMaster = 2;
-        if (number.startsWith("12")) return typeMaster; //метод, который определяет, начинается ли строка с заданного субстринга
+        if (number.startsWith("12"))
+            return typeMaster; //метод, который определяет, начинается ли строка с заданного субстринга
         if (number.startsWith("13")) return typeVisa;
         return 0;
     }
 
-    public static void printArrayCard(Card[] cards){  //нужно было, тк стандартный Arrays.toString работает со стандартным методом, который переопределн у наследников. если мы хотим использовать другой метод, то надо писать ручками
-        for (Card card: cards) {
+    public static void printArrayCard(Card[] cards) {  //нужно было, тк стандартный Arrays.toString работает со стандартным методом, который переопределн у наследников. если мы хотим использовать другой метод, то надо писать ручками
+        for (Card card : cards) {
             System.out.println(card.securePrint());
         }
     }
