@@ -21,15 +21,10 @@ public class DateInterval {
     }
 
     public int getDays() {
-        int daysInYear = 365;
-        if (findLeapYear(checkin.getYear())) {
-            daysInYear = 366;
-        }
-
         if (checkin.getYear() == checkout.getYear()) {
             days = getNumberOfDay(checkout.getMonth(), checkout.getYear(), checkout.getDay()) - getNumberOfDay(checkin.getMonth(), checkin.getYear(), checkin.getDay());
         } else {
-            days = (daysInYear - getNumberOfDay(checkin.getMonth(), checkin.getYear(), checkin.getDay())) + getNumberOfDay(checkout.getMonth(), checkout.getYear(), checkout.getDay());
+            days = (getDayInTheYear(checkin.getYear()) - getNumberOfDay(checkin.getMonth(), checkin.getYear(), checkin.getDay())) + getNumberOfDay(checkout.getMonth(), checkout.getYear(), checkout.getDay());
         }
         return days;
     }
@@ -68,8 +63,16 @@ public class DateInterval {
         return daysFromNYtoDate;
     }
 
-    public static boolean findLeapYear(int year) {
+    public boolean findLeapYear(int year) {
         return (year % 4 == 0) ^ ((year % 100 == 0) & (year % 400 != 0));
+    }
+
+    public int getDayInTheYear(int year){
+        int daysInYear = 365;
+        if (findLeapYear(year)) {
+            daysInYear = 366;
+        }
+        return daysInYear;
     }
 
     @Override
