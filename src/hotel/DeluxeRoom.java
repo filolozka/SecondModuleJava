@@ -5,23 +5,11 @@ public class DeluxeRoom extends Room {
     boolean booked = false;
     int metres = 30;
     int numberRooms = 1;
+    private final double priceCoefficient = 1.3;
+    private final double deLuxeTax = 50.0;
 
-    public DeluxeRoom(int numberPerson) {
-        setNumberPeople(numberPerson);
-    }
-
-    @Override
-    public void setNumberPeople(int numberPeople) {
-        if (numberPeople <= 3) {
-            this.numberPeople = numberPeople;
-        } else {
-            System.out.println("Error! Only 1 or 2 or 3 person can be checked in in this room");
-        }
-    }
-
-    @Override
-    public int getNumberPeople() {
-        return numberPeople;
+    public DeluxeRoom(String number, int capacity) {
+        super(number, capacity);
     }
 
     public int getMetres() {
@@ -41,10 +29,23 @@ public class DeluxeRoom extends Room {
     @Override
     public String toString() {
         return "DeluxeRoom{" +
-                "name='" + name + '\'' +
-                ", numberRooms=" + numberRooms +
-                ", numberPeople=" + numberPeople +
-                ", metres=" + metres +
+                "priceCoefficient=" + priceCoefficient +
+                ", deLuxeTax=" + deLuxeTax +
                 '}';
+    }
+
+    @Override
+    public double getPrice() {
+        return getBasePrise() * priceCoefficient + deLuxeTax;
+    }
+
+    @Override
+    public void setNumberPeople(int numberPeople) {
+
+    }
+
+    @Override
+    public int getNumberPeople() {
+        return 0;
     }
 }
