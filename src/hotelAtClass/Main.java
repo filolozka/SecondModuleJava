@@ -30,11 +30,16 @@ public class Main {
                         new Date (5, 3, 2020))
         );
 
+        BookingList bookingList = new ArrayBookingList(2);
+        bookingList.addBooking(b1);
+        bookingList.addBooking(b2);
+        bookingList.addBooking(b3);
+        bookingList.printBooking();
 
-        System.out.println(b1); //ожидаем date interval = 11
-        System.out.println(b2); //ожидаем data interval = 2
-        System.out.println(b3); //ожидаем d.inteval = 6
-        System.out.println(b4); //ожидаем d.inteval = 9
+//        System.out.println(b1); //ожидаем date interval = 11
+//        System.out.println(b2); //ожидаем data interval = 2
+//        System.out.println(b3); //ожидаем d.inteval = 6
+//        System.out.println(b4); //ожидаем d.inteval = 9
 
     }
 }
