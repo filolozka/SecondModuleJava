@@ -2,6 +2,20 @@ package hotelAtClass;
 
 public class Main {
     public static void main(String[] args) {
+        DateInterval test = new DateInterval(
+                new Date (24, 8, 20),
+                new Date (24, 8, 20));
+
+        System.out.println(test);  //ожидаем nulls
+
+        DateInterval test2 = new DateInterval(
+                new Date (11, 8, 20),
+                new Date (12, 8, 20)
+        );
+
+        System.out.println(test2); //ожидаем [11-8-20;12-8-20]
+
+
         Booking b1 = new Booking(
                 new StandardRoom("1", 2),
                 new Person("Masha"),
@@ -31,15 +45,10 @@ public class Main {
         );
 
         BookingList bookingList = new ArrayBookingList(2);
-        bookingList.addBooking(b1);
-        bookingList.addBooking(b2);
-        bookingList.addBooking(b3);
-        bookingList.printBooking();
-
-//        System.out.println(b1); //ожидаем date interval = 11
-//        System.out.println(b2); //ожидаем data interval = 2
-//        System.out.println(b3); //ожидаем d.inteval = 6
-//        System.out.println(b4); //ожидаем d.inteval = 9
+//        bookingList.addBooking(b1);
+//        bookingList.addBooking(b2);
+//        bookingList.addBooking(b3);
+//        bookingList.printBooking();
 
     }
 }
