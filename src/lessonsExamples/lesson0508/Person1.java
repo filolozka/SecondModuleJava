@@ -38,6 +38,14 @@ public class Person1 implements Comparable<Person1> {
 //        }
 
 
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
     @Override
     public String toString() {
         return "Person1{" +
