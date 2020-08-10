@@ -2,7 +2,7 @@ package hotelAtClass;
 
 import java.time.Period;
 
-public class Booking {
+public class Booking implements Comparable<Booking> {
     private Room room;
     private Person person;
     private DateInterval dateInterval;
@@ -34,5 +34,15 @@ public class Booking {
         return "Booking: " + room +
                 ", person=" + person +
                 ", " + dateInterval + "\n\tprice for " + dateInterval.getDays() + " days is " + getPrice() + " Euro";
+    }
+
+    @Override
+    public int compareTo(Booking o) {
+        //switch () и варианты с компаратором из классов
+        return 0;
+    }
+
+    public int bookingSorting(){
+        return 0;
     }
 }
