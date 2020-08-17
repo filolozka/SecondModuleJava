@@ -8,8 +8,19 @@ public class DateInterval {
     private int days = 0;
 
     public DateInterval(Date checkin, Date checkout) {
-        this.checkin = checkin;
-        this.checkout = checkout;
+        if (checkin.compareTo(checkout) > 0) {
+            this.checkin = checkout;
+            this.checkout = checkin;
+        }
+        else {
+            this.checkin = checkin;
+            this.checkout = checkout;
+        }
+    }
+
+    public static boolean isIntersect(DateInterval dateInterval, DateInterval dateInterval1) {
+        return !((dateInterval.checkin.compareTo(dateInterval1.checkout)) > 0) ||
+            (dateInterval1.getCheckin().compareTo(dateInterval.getCheckout()) > 0);
     }
 
     public Date getCheckin() {

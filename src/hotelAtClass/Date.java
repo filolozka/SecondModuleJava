@@ -1,6 +1,8 @@
 package hotelAtClass;
 
-public class Date {
+import java.util.Comparator;
+
+public class Date implements Comparable<Date> {
     private int day;
     private int month;
     private int year;
@@ -76,5 +78,22 @@ public class Date {
 
     public int getDayPerMonth() {
         return getDayPerMonth(this.month, this.year);
+    }
+
+    @Override
+    public int compareTo(Date o) {
+        int comparingYear = this.year - o.year;
+        int comparingMonth = this.month - o.month;
+        int comparingDay = this.day - o.day;
+        if (comparingYear == 0) {
+            if (comparingMonth == 0) {
+                return comparingDay;
+            }
+            else {
+                return comparingMonth;
+            }
+        } else {
+            return comparingYear;
+        }
     }
 }
