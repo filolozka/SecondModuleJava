@@ -3,6 +3,8 @@ package hotelAtClass;
 import java.time.Period;
 
 public class Booking implements Comparable<Booking> {
+    static private int nextId=0;
+    private int id;
     private Room room;
     private Person person;
     private DateInterval dateInterval;
@@ -11,6 +13,7 @@ public class Booking implements Comparable<Booking> {
         this.room = room;
         this.person = person;
         this.dateInterval = dateInterval;
+        this.id=++nextId;
     }
 
     public Room getRoom() {
