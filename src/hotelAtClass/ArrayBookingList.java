@@ -29,16 +29,16 @@ public class ArrayBookingList implements BookingList {
     }
 
     public void removeBooking(Booking booking) {
-        Booking[] bookingAfterCut;
+        Booking[] bookingAfterCut = new Booking[bookings.length - 1];;
         for (int i = 0; i < bookings.length; i++) {
             int index = findTheBooking(booking);
             if (index != 0) {
-                bookingAfterCut = new Booking[bookings.length - 1];
                 System.arraycopy(bookings, index, bookingAfterCut, 0,bookings.length - 1);
             } else {
                 System.out.println("Error");
             }
         }
+        bookings = bookingAfterCut;
     }
 
     public int findTheBooking(Booking booking) {
@@ -46,6 +46,9 @@ public class ArrayBookingList implements BookingList {
         for (int i = 1; i < bookings.length; i++) {
             if (bookings[i].compareTo(booking) == 0) {
              index = i;
+            }
+            else {
+                bookings[i].equals(booking);
             }
         }
         return index;
