@@ -7,11 +7,6 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ReverseStringActionTest {
-    /*
-    input data
-    call the method
-    check the result is expected
-     */
 
     @Test
     public void doAction_goodString_reverseString() {
@@ -33,5 +28,19 @@ class ReverseStringActionTest {
         String str = null;
         Action action = new ReverseStringAction();
         assertNull(action.doAction(str));
+    }
+
+    @Test
+    public void reverseConditionShouldReturnFalse(){
+        String str = "hello";
+        ReverseCondition condition = new ReverseCondition();
+        assertEquals(false, condition.test(str));
+    }
+
+    @Test
+    public void reverseConditionShouldReturnTrue(){
+        String str = "hello1";
+        ReverseCondition condition = new ReverseCondition();
+        assertEquals(true, condition.test(str));
     }
 }
