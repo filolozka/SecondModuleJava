@@ -13,6 +13,15 @@ public class ReverseStringAction implements Action {
                 reversedString += chars[i];
             }
             return reversedString;
+
+            /*
+            еще один вариант:
+            char[] res = new char[stringToReverse.length];
+            for (int i = 0, j = res.length -1; i < stringToReverse.length(); i++, j--){
+            res[i] = chars[j];
+            }
+            return new String (res);
+             */
         }
     }
 }
