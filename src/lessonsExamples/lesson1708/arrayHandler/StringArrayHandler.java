@@ -1,4 +1,4 @@
-package lessonsExamples.lesson1708;
+package lessonsExamples.lesson1708.arrayHandler;
 
 import java.util.Arrays;
 
@@ -23,8 +23,11 @@ public class StringArrayHandler {
     }
 
     public StringArrayHandler stringsHadler(){ //сделав так, можно потом вызывать метод цепочкой
+        if (this.strings == null || this.action == null){
+            return null;
+        }
         for (int i = 0; i < strings.length; i++) {
-            if (condition.test(strings[i])){
+            if (condition == null || condition.test(strings[i]) ){
                 strings[i] = action.doAction(strings[i]);
             }
         }

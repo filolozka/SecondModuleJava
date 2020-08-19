@@ -1,4 +1,6 @@
-package lessonsExamples.lesson1708;
+package lessonsExamples.lesson1708.arrayHandler.actions;
+
+import lessonsExamples.lesson1708.arrayHandler.Action;
 
 public class ReverseStringAction implements Action {
 

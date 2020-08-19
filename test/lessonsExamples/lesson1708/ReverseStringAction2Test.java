@@ -1,5 +1,8 @@
 package lessonsExamples.lesson1708;
 
+import lessonsExamples.lesson1708.arrayHandler.Action;
+import lessonsExamples.lesson1708.arrayHandler.actions.ReverseStringAction;
+import lessonsExamples.lesson1708.arrayHandler.conditions.ReverseCondition;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

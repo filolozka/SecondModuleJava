@@ -1,6 +1,8 @@
-package lessonsExamples.lesson1708;
+package lessonsExamples.lesson1708.arrayHandler.conditions;
 
-public class LengthCondition implements Condition{
+import lessonsExamples.lesson1708.arrayHandler.Condition;
+
+public class LengthCondition implements Condition {
     private int lenght;
 
     public LengthCondition(int lenght) {

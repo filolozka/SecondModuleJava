@@ -1,4 +1,6 @@
-package lessonsExamples.lesson1708;
+package lessonsExamples.lesson1708.arrayHandler.conditions;
+
+import lessonsExamples.lesson1708.arrayHandler.Condition;
 
 public class ReverseCondition implements Condition {
 
