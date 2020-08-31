@@ -12,15 +12,6 @@ public class PersonP {
         this.addresses = addresses;
     }
 
-    public PersonP(String name, ArrayList<String> addresses2) {
-        this.name = name;
-        this.addresses2 = addresses2;
-    }
-
-    public PersonP(AddressList addresses) {
-        this.addresses = addresses;
-    }
-
     public AddressList getAddresses() {
         return addresses;
     }

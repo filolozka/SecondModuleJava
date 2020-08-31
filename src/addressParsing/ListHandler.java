@@ -21,8 +21,11 @@ public class ListHandler {
             if (s.getAddresses() != null & s.getName() != null) {
                 if (this.predicate.test(s.getAddresses().getEmail())) {
                     temp.append(s.getName() + " " + s.getAddresses().getEmail());
-                    if ((temp.toString()).length() > 0) {
+                    if (s.getAddresses() != null) {
                         this.emailsAndNamesList.add(temp.toString());
+                    }
+                    else {
+                        //создать лист и положить туда
                     }
                 }
             } else return null;
