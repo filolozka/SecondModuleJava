@@ -5,8 +5,16 @@ import java.util.List;
 
 public class Task {
     public static void main(String[] args) {
+        Person123 p1 = null;
+        try {
+            p1 = new Person123(null, "second");
+        }
+        catch (Exception e){
+            System.out.println("person not create");
+        }
+        System.out.println(p1);
 
-        Person123 person123 = new Person123("Ivan", "Michajlov");
+        /*Person123 person123 = new Person123("Ivan", "Michajlov");
         person123.addAddress(new PersonAddress("Berlin, Mainstrasse, 123", "post"));
         person123.addAddress(new PersonAddress("123@mail.ru", "email"));
         person123.addAddress(new PersonAddress("13244524t", "billing"));
@@ -26,6 +34,6 @@ public class Task {
         people.add(person1231);
         people.add(person12312);
 
-        System.out.println(PersonListHandler.personListHandler(people));
+        System.out.println(PersonListHandler.personListHandler(people));*/
     }
 }

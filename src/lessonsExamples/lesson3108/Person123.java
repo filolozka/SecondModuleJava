@@ -2,6 +2,7 @@ package lessonsExamples.lesson3108;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Person123 {
     private String firstName;
@@ -15,8 +16,8 @@ public class Person123 {
     }
 
     public Person123(String firstName, String secondName) {
-        this.firstName = firstName;
-        this.secondName = secondName;
+            this.firstName = Objects.requireNonNull(firstName);
+            this.secondName = secondName;
     }
 
     public void addAddress(PersonAddress address){
