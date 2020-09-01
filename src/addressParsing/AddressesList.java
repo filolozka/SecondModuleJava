@@ -1,23 +1,23 @@
 package addressParsing;
 
-public class AddressList {
+public class AddressesList {
     private String billingAddress;
     private String email;
     private String deliveryAddress;
 
-    public AddressList(String billingAddress, String deliveryAddress, String email) {
+    public AddressesList(String billingAddress, String deliveryAddress, String email) {
         this.billingAddress = billingAddress;
         this.deliveryAddress = deliveryAddress;
         this.email = email;
     }
 
-    public AddressList(String email, String deliveryAddress) {
+    public AddressesList(String email, String deliveryAddress) {
         this.email = email;
         this.deliveryAddress = deliveryAddress;
     }
 
 
-    public AddressList() {
+    public AddressesList() {
     }
 
     public String getBillingAddress() {

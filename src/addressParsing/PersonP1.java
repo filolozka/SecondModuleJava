@@ -2,17 +2,19 @@ package addressParsing;
 
 import java.util.ArrayList;
 
-public class PersonP {
-    private AddressList addresses;
+public class PersonP1 {
+    private AddressesList addresses;
     private ArrayList<String> addresses2;
     private String name;
 
-    public PersonP(String name, AddressList addresses) {
+    public PersonP1(String name, AddressesList addresses) {
         this.name = name;
         this.addresses = addresses;
     }
 
-    public AddressList getAddresses() {
+    public AddressesList getAddresses() {
+
+
         return addresses;
     }
 
