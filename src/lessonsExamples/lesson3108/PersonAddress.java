@@ -2,7 +2,7 @@ package lessonsExamples.lesson3108;
 
 public class PersonAddress {
     private String address;
-    private String type;
+    private String type; //здеь логичнее enum
 
     public PersonAddress(String address, String type) {
         this.address = address;
