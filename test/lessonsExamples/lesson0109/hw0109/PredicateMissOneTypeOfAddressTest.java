@@ -30,3 +30,4 @@ class PredicateMissOneTypeOfAddressTest {
         assertTrue(new PredicateMissOneTypeOfAddress().test(address));
     }
 }
+

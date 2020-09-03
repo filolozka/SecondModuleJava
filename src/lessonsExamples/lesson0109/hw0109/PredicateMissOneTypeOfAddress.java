@@ -12,3 +12,4 @@ public class PredicateMissOneTypeOfAddress implements Predicate<PersonaAddress> 
         else return false;
     }
 }
+

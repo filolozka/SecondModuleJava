@@ -53,12 +53,16 @@ class FunctionMakeListOnConditionTest {
     public void apply_null_PredicateAddress_StringList() {
         FunctionMakeListOnCondition function = new FunctionMakeListOnCondition();
         PredicateMissOneTypeOfAddress predicate = new PredicateMissOneTypeOfAddress();
-        List<Persona> str1 = new ArrayList<>();
-        assertEquals(function.apply(null, predicate), str1);
+        List<Persona> output = new ArrayList<>();
+        assertEquals(function.apply(null, predicate), output);
     }
 
     @Test
     public void apply_emptyPersonaList_StringList() {
-
+        FunctionMakeListOnCondition function = new FunctionMakeListOnCondition();
+        PredicateMissOneTypeOfAddress predicate = new PredicateMissOneTypeOfAddress();
+        List<Persona> output = new ArrayList<>();
+        List<Persona> input = new ArrayList<>();
+        assertEquals(function.apply(input, predicate), output);
     }
 }

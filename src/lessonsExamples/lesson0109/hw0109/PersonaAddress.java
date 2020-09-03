@@ -24,3 +24,4 @@ public class PersonaAddress {
         return type + " address='" + address;
     }
 }
+

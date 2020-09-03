@@ -5,3 +5,5 @@ public enum AddressType {
     DELIVERY,
     EMAIL;
 }
+
+
