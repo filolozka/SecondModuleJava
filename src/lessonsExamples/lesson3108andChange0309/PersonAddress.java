@@ -1,10 +1,16 @@
-package lessonsExamples.lesson3108;
+package lessonsExamples.lesson3108andChange0309;
 
 public class PersonAddress {
     private String address;
-    private String type; //здеь логичнее enum
+    //private String type; //убираем
+    private AddressType type;
 
     public PersonAddress(String address, String type) {
+        this.address = address;
+        this.type = AddressType.valueOf(type.toUpperCase());
+    }
+
+    public PersonAddress(String address, AddressType type) {
         this.address = address;
         this.type = type;
     }
@@ -14,7 +20,7 @@ public class PersonAddress {
     }
 
     public String getType() {
-        return type;
+        return type.name().toLowerCase();
     }
 
     @Override

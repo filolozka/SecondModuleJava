@@ -1,4 +1,4 @@
-package lessonsExamples.lesson3108;
+package lessonsExamples.lesson3108andChange0309;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,13 +43,20 @@ public class Person123 {
     }
 
     public List<PersonAddress> getAddresses(String type) {
+        if ((type.equals("email"))||(type.equals("post"))||(type.equals("billing"))){
+            return getAddresses(AddressType.valueOf(type.toUpperCase()));
+        }
+        return new ArrayList<>();
+    }
+
+    public List<PersonAddress> getAddresses(AddressType type){
         List<PersonAddress> res = new ArrayList<>();
         for (PersonAddress address: addresses) {
-            if (address.getType().equals(type)){
+            if (address.getType().equals(type.name().toLowerCase())){
                 res.add(address);
             }
         }
-        return res;
+        return null;
     }
 
     @Override
