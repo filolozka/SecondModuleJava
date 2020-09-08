@@ -25,6 +25,15 @@ public class Task implements Comparable<Task> {
         return priority;
     }
 
+    public int getPriorityInt() {
+        switch (priority){
+            case HIGH: return 1;
+            case NORMAL: return 2;
+            case LOW:return 3;
+        }
+        return 0;
+    }
+
     public String getDescription() {
         return description;
     }
@@ -45,6 +54,6 @@ public class Task implements Comparable<Task> {
 
     @Override
     public int compareTo(Task o) {
-        return 0; //дописать в качестве дз
+        return new ComparatorPriority().compare(this, o);
     }
 }
