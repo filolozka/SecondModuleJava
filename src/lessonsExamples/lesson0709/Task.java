@@ -1,5 +1,7 @@
 package lessonsExamples.lesson0709;
 
+import java.util.Objects;
+
 public class Task implements Comparable<Task> {
     private int id;
     private Priority priority;
@@ -26,12 +28,7 @@ public class Task implements Comparable<Task> {
     }
 
     public int getPriorityInt() {
-        switch (priority){
-            case HIGH: return 1;
-            case NORMAL: return 2;
-            case LOW:return 3;
-        }
-        return 0;
+        return priority.getPriorityInt();
     }
 
     public String getDescription() {
@@ -53,7 +50,27 @@ public class Task implements Comparable<Task> {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Task task = (Task) o;
+        return id == task.id &&
+                priority == task.priority &&
+                Objects.equals(description, task.description) &&
+                status == task.status;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, priority, description, status);
+    }
+
+    @Override
     public int compareTo(Task o) {
-        return new ComparatorPriority().compare(this, o);
+       // return new ComparatorPriority().compare(this, o);
+        //int answer = this.getPriorityInt() - o.getPriorityInt();
+        //return Integer.compare(0, answer);
+
+        return this.getPriority().compareTo(o.getPriority());
     }
 }
