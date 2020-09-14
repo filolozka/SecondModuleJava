@@ -1,7 +1,6 @@
-package lessonsExamples.lesson0909;
+package lessonsExamples.lesson0809;
 
 import java.util.Arrays;
-import java.util.function.Function;
 
 public class Task {
     //:Til Schweiger Iban:DE15971891

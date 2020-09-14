@@ -1,4 +1,4 @@
-package lessonsExamples.lesson0909;
+package lessonsExamples.lesson0809;
 
 public enum TypeOfOwnership {
     GMBH {

@@ -1,4 +1,4 @@
-package lessonsExamples.lesson0909;
+package lessonsExamples.lesson0809;
 
 public class Person extends Owner {
     private String firstName = "";
