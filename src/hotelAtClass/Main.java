@@ -36,7 +36,10 @@ public class Main {
         bookingList.addBooking(b1);
         bookingList.addBooking(b2);
         bookingList.addBooking(b3);
-        bookingList.printBooking();
+//        bookingList.printBooking();
+
+        System.out.println(bookingList.getBookingByIndex(2));
+        System.out.println(bookingList.find(b3));
 
         //Arrays.sort(bookingList, );
         System.out.println(b1.compareTo(b2));

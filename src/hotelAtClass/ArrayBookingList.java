@@ -54,6 +54,21 @@ public class ArrayBookingList implements BookingList {
         return index;
     }
 
+    public Booking getBookingByIndex(int index){
+        return bookings[index];
+    }
+
+    public boolean find(Booking booking){
+        boolean found = false;
+        for (int i = 0; i < bookings.length; i++) {
+            if (bookings[i].equals(booking)){
+                found = true;
+                break;
+            }
+        }
+        return found;
+    }
+
     @Override
     public int size() {
         return size;
