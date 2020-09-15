@@ -1,5 +1,7 @@
 package hotelAtClass;
 
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
         Booking b1 = new Booking(
@@ -38,6 +40,9 @@ public class Main {
 
         System.out.println(bookingList.getBookingByIndex(2));
         System.out.println(bookingList.find(b3));
+
+        //Arrays.sort(bookingList, );
+        System.out.println(b1.compareTo(b2));
 
 //        System.out.println(b1); //ожидаем date interval = 11
 //        System.out.println(b2); //ожидаем data interval = 2

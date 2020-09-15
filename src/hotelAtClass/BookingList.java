@@ -1,9 +1,12 @@
 package hotelAtClass;
 
+import java.util.Comparator;
+
 public interface BookingList {
     void addBooking(Booking booking);
     int size();
     void printBooking();
-    boolean find(Booking booking);
-    Booking getBookingByIndex(int index);
+    Booking[] getSortedArray(Comparator<Booking> comparator);
+
+    Booking getByIndex(int i);
 }
