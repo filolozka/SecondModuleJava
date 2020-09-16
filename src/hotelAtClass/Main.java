@@ -38,8 +38,8 @@ public class Main {
         bookingList.addBooking(b3);
 //        bookingList.printBooking();
 
-        System.out.println(bookingList.getBookingByIndex(2));
-        System.out.println(bookingList.find(b3));
+       // System.out.println(bookingList.getBookingByIndex(2));
+        //System.out.println(bookingList.find(b3));
 
         //Arrays.sort(bookingList, );
         System.out.println(b1.compareTo(b2));
