@@ -35,7 +35,7 @@ public class Address {
 
     @Override
     public String toString() {
-        return "\n" + address +
+        return address +
                 " " + type;
     }
 }

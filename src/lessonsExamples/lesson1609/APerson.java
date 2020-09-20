@@ -1,9 +1,10 @@
 package lessonsExamples.lesson1609;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class APerson{
+public class APerson {
     private List<Address> addresses;
     private String name;
 
@@ -20,18 +21,23 @@ public class APerson{
         return addresses;
     }
 
+    public void putNewAddresses(List<Address> addresses) {
+        List<Address> updatedList = new ArrayList<>(this.addresses);
+        updatedList.addAll(addresses);
+        this.addresses = updatedList;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         APerson aPerson = (APerson) o;
-        return Objects.equals(addresses, aPerson.addresses) &&
-                Objects.equals(name, aPerson.name);
+        return Objects.equals(name, aPerson.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(addresses, name);
+        return Objects.hash(name);
     }
 
     @Override
