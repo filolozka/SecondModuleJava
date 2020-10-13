@@ -40,8 +40,8 @@ public class LambdaTasks {
         System.out.println("Try function cutEvenString with s = " + "abcdc: " + cutEvenString.apply("abcdc"));
 
         System.out.println("8-----");
-        RandomNumber giveMeNumber = () -> (int) (Math.random() * (1000 - 10 + 1) + 10);
-        System.out.println("Try function giveMeNumber " + giveMeNumber.getRandomNumber());
+        IntSupplier randomNumber = () -> (int) (Math.random() * (1000 - 10 + 1) + 10);
+        System.out.println("Try function randomNumber " + randomNumber.getAsInt());
 
         System.out.println("9-----");
         UnaryOperator<String> reverseString = s -> (new StringBuilder(s).reverse()).toString();
