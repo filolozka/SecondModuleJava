@@ -9,27 +9,29 @@ public class StringTransform {
     //   // length == 5 -> toLowerCase
     //   // length is even -> to UpperCase
 
-    public static void main(String[] args) {
-        String testString = "abc defG ikl";
-        System.out.println(transform(testString, 4));
-    }
-
-    public static String transform(String sentence, Predicate<Integer> predicate, UnaryOperator<String> function) {
-        StringBuilder result = new StringBuilder();
+    static String transform(String sentence, Predicate<Integer> predicate, UnaryOperator<String> function) {
         String[] stringByWords = sentence.split(" ");
-        for (String stringByWord : stringByWords) {
-            if (predicate.test(stringByWord.length())) {
-                result = new StringBuilder(result.toString().concat(" ").concat(function.apply(stringByWord)));
-            } else {
-                result.append(" ").append(stringByWord);
+        for (int i = 0; i < stringByWords.length; i++) {
+            if (predicate.test(stringByWords[i].length())) {
+                stringByWords[i] = function.apply(stringByWords[i]);
             }
         }
-        return result.toString();
+        return String.join(" ", stringByWords);
     }
 
-    public static String transform(String sentence, int length) {
-        Predicate<Integer> predicateToTransform = s -> s == length;
-        UnaryOperator<String> transform = String::toUpperCase;
-        return transform(sentence, predicateToTransform, transform);
+    public static String transform1(String sentence) {
+        return transform(sentence, s -> s == 3, String::toUpperCase);
+    }
+
+    public static String transform2(String sentence) {
+        return transform(sentence, s -> s == 5, String::toLowerCase);
+    }
+
+    public static String transform3(String sentence) {
+        return transform(sentence, s -> s % 2 == 0, String::toUpperCase);
+    }
+
+    public static String transform4(String sentence, int length) {
+        return transform(sentence, s -> s == length, String::toUpperCase);
     }
 }
