@@ -1,20 +1,28 @@
 package streamApiTasks;
 
 public class Account {
-    String iban;
-    Person person;
+    private String iban;
+    private Person owner;
 
     public Account(String iban) {
         this.iban = iban;
     }
 
-    public Account(String iban, Person person) {
+    public Account(String iban, Person owner) {
         this.iban = iban;
-        this.person = person;
+        this.owner = owner;
     }
 
     @Override
     public String toString() {
         return "iban='{' " + iban + '}';
+    }
+
+    public String getIban() {
+        return iban;
+    }
+
+    public Person getOwner() {
+        return owner;
     }
 }
