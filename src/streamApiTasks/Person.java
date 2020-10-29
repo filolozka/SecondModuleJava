@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Person {
     private String name;
-    private int age;
+    private Integer age;
     private Address address;
     private List<Account> bankAccounts;
 
@@ -17,6 +17,10 @@ public class Person {
     public Person(String name, List<Account> bankAccounts) {
         this.name = name;
         this.bankAccounts = bankAccounts;
+    }
+
+    public Person(String name) {
+        this.name = name;
     }
 
     public String getName() {
@@ -33,5 +37,10 @@ public class Person {
 
     public List<Account> getBankAccounts() {
         return bankAccounts;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" + name + '}';
     }
 }
