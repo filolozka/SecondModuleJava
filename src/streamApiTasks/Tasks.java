@@ -71,11 +71,18 @@ public class Tasks {
     //Не решила эту задачу:
     //8-9. Написать функцию, которая по списку persons возвращает список их
     //банковских счетов с звездочками с третьего символа. Подсказка - flatMap()
-    //public static List<String> getSecuredAccounts (List<Person> people){
-    //    return people.stream().flatMap(person -> Stream.of(person.getBankAccounts()
-    //            .stream().map(account -> account.getIban().substring(0, 3) + "*******************")))
-    //            .collect(Collectors.toList());
-    //}
+    public static List<String> getSecuredAccounts(List<Person> people) {
+        return people.stream()
+                .flatMap(person -> person.getBankAccounts().stream())
+                .map(Account::getIban)
+                .map(s -> allianateIban(s))
+                .collect(Collectors.toList());
+    }
+
+    private static String allianateIban(String s) {
+        return s.substring(0,2) + s.substring(2).replaceAll("\\d", "*");
+    }
+
 
     //10. Для списка persons посчитать общий возраст тех, кому больше 17 лет.
     //Подсказка - reduce()
