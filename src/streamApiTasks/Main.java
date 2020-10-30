@@ -57,13 +57,21 @@ public class Main {
         System.out.println("Number of words: " + Tasks.isTheStringIsInteger("430"));
         System.out.println("-----------------------------------------");
 
-        //System.out.println("8-9. Get secure IBANs from the list of Person");
-        //System.out.println("IBANs are: ");
-        //System.out.println("-----------------------------------------");
+        System.out.println("8. Get secure IBANs from the list of Person");
+        System.out.println("IBANs are: ");
+        System.out.println("-----------------------------------------");
 
-        System.out.println("10. Get total age of all people who older 17");
+        System.out.println("9. Get total age of all people who older 17");
         System.out.println("Total age: " + Tasks.getTotalAge(personList));
         System.out.println("-----------------------------------------");
 
+        System.out.println("10. Print all people who older 17");
+        Tasks.printPersonOlder17Age(Tasks.getAdults(personList));
+        System.out.println();
+        System.out.println("-----------------------------------------");
+
+        System.out.println("11. Get total age of all people who older 17");
+        System.out.println("Total age: ");
+        System.out.println("-----------------------------------------");
     }
 }

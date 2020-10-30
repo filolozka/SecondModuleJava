@@ -60,16 +60,15 @@ public class Tasks {
         return (int) numberOfWords;
     }
 
-    //7. Написать функцию, которая проверяет, является ли заданная строка целым
-    //числом. Подсказка - Character.isDigit() и Stream.allMatch().
+    //7. Написать функцию, которая проверяет, является ли заданная строка целым числом.
     public static boolean isTheStringIsInteger(String str) {
         return str.chars()
                 .allMatch(Character::isDigit);
     }
 
 
-    //Не решила эту задачу:
-    //8-9. Написать функцию, которая по списку persons возвращает список их
+    //Решение с урока:
+    //8. Написать функцию, которая по списку persons возвращает список их
     //банковских счетов с звездочками с третьего символа. Подсказка - flatMap()
     public static List<String> getSecuredAccounts(List<Person> people) {
         return people.stream()
@@ -80,11 +79,11 @@ public class Tasks {
     }
 
     private static String allianateIban(String s) {
-        return s.substring(0,2) + s.substring(2).replaceAll("\\d", "*");
+        return s.substring(0, 2) + s.substring(2).replaceAll("\\d", "*");
     }
 
 
-    //10. Для списка persons посчитать общий возраст тех, кому больше 17 лет.
+    //9. Для списка persons посчитать общий возраст тех, кому больше 17 лет.
     //Подсказка - reduce()
     public static Integer getTotalAge(List<Person> people) {
         return people.stream().filter(person -> person.getAge() > 17)
@@ -93,17 +92,18 @@ public class Tasks {
     }
 
 
-    //Не решено
+    //10. Написать функцию, которая для списка persons напечатает для тех, кто
+    //старше 17 лет;
 
-    //11. Написать функцию, которая для списка persons напечатает для тех, кто
-    //старше 17 лет: In Germany <name1> and <name2> and …<nameN> are of legal
-    //age. Подсказка - Collectors.joining();
+    public static void printPersonOlder17Age(String adults) {
+        System.out.print("In Germany " + adults + " are legal age");
+    }
 
-    //public static void printPersonOlder17Age(List<Person> personList) {
-    //List<Person> listAdults = (List<Person>) personList.stream().collect(Collectors.groupingBy(Person::getAge));
-    //listAdults.forEach(System.out::println);
-    //Map<Integer, List<Person>> temp = personList.stream().filter(person -> person.getAge() > 17)
-    //       .collect(Collectors.groupingBy(Person::getAge));
-    //List<Person> listAdults = temp.stream().collect(Collectors.joining(" , "));
-
+    public static String getAdults(List<Person> personList){
+        return personList
+                .stream()
+                .filter(p -> p.getAge() > 17)
+                .map(Person::getName)
+                .collect(Collectors.joining(" and "));
+    }
 }
