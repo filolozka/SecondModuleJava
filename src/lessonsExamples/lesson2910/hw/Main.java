@@ -1,39 +1,21 @@
 package lessonsExamples.lesson2910.hw;
 
-import java.util.function.Predicate;
+import java.util.Arrays;
 
 public class Main {
     //Клиент должен быть не моложе 17 лет
     //Банковский iban должен быть длиной 16
     //Первые два символа iban должны быть "DE"
 
-    public static void main(String[] args) throws ClientAgesException {
-       // ("Pavel", 16);
-    }
+    public static void main(String[] args) {
+        BankAccount b1 = new BankAccount("DE121209");
+        BankAccount b2 = new BankAccount("12120909");
+        BankAccount b3 = new BankAccount("DE12120");
 
-    public static void validation(){
-
-    }
-
-    public static void newCustomer(String name, int age, String iban) throws ClientAgesException {
-        if (checkIban(iban)){
-            BankAccount bankAccount1 = new BankAccount(iban);
-        }
-
-        if (checkAge(age)){
-       //     Customer c1 = new Customer(name, age);
-        }
-        else {
-            throw new ClientAgesException("Sorry, the customer must be at least 17 years old");
-        }
-    }
-
-    public static boolean checkAge(int ages) {
-        Predicate<Integer> isAdult = ages1 -> ages1 > 17;
-        return isAdult.test(ages);
-    }
-
-    public static boolean checkIban(String iban) {
-        return iban.startsWith("DE") && (iban.length() == 16);
+        Customer c1 = new Customer("Pavel", 30, b1);
+        Customer c2 = new Customer("Lena", 16, b2);
+        Customer c3 = new Customer("Emma", 18, b3);
+        
+        Validator.validate(Arrays.asList(c1, c2, c3), Arrays.asList(new ValidationCustomerAge(), new ValidationIbanName(), new ValidationIbanLength()));
     }
 }
