@@ -4,12 +4,9 @@ import lessonsExamples.lesson0610.Demo;
 
 import java.util.function.Consumer;
 import java.util.function.Function;
-import java.util.function.Supplier;
 import java.util.function.UnaryOperator;
 
 public class ReferenceTasks {
-    // Return an employee salary using 1. Supplier, 2. Function.
-
     public static void main(String[] args) {
 
         UnaryOperator<String> lowerString = ReferenceTasks :: getLowerString;
@@ -23,7 +20,6 @@ public class ReferenceTasks {
 
         Function<String, String> cutEvenString = ReferenceTasks :: cutEvenString;
         System.out.println("Try function cutEvenString with s = " + "abcd: " + cutEvenString.apply("abcd"));
-        
     }
 
     public static String getLowerString(String input){
