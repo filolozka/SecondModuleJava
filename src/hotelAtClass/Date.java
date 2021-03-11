@@ -91,4 +91,21 @@ public class Date implements Comparable<Date> {
             return -1;
         }
     }
+
+    @Override
+    public int compareTo(Date o) {
+        int comparingYear = this.year - o.year;
+        int comparingMonth = this.month - o.month;
+        int comparingDay = this.day - o.day;
+        if (comparingYear == 0) {
+            if (comparingMonth == 0) {
+                return comparingDay;
+            }
+            else {
+                return comparingMonth;
+            }
+        } else {
+            return comparingYear;
+        }
+    }
 }

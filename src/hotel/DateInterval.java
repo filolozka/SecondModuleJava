@@ -1,5 +1,7 @@
 package hotel;
 
+
+
 public class DateInterval {
     private Date checkin;
     private Date checkout;
@@ -19,7 +21,6 @@ public class DateInterval {
     }
 
     public int getDays() {
-
         if (checkin.getYear() == checkout.getYear()) {
             days = getNumberOfDay(checkout.getMonth(), checkout.getYear(), checkout.getDay()) - getNumberOfDay(checkin.getMonth(), checkin.getYear(), checkin.getDay());
         } else {
@@ -74,10 +75,8 @@ public class DateInterval {
         return daysInYear;
     }
 
-
-
     @Override
     public String toString() {
-        return "[" + checkin + "-" + checkout + "]"; //если скобки одинарные - это char
+        return "[" + checkin + "-" + checkout + "]"; 
     }
 }

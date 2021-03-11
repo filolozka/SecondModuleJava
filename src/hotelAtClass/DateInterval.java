@@ -5,9 +5,7 @@ import java.util.Random;
 public class DateInterval implements Comparable<DateInterval> {
     private Date start;
     private Date finish;
-    //private static  Random rnd = new Random(System.currentTimeMillis());
     private int days=0;
-
 
     public DateInterval(Date start, Date finish) {
         if (start.compareTo(finish) != 0) {

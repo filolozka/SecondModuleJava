@@ -6,36 +6,13 @@ public class Booking {
     private Guest guest;
     private Room room;
     private boolean paid;
-    private double invoiceAmount;
-    private Date checkIn;
-    private Date checkOut;
-    private typeOfPay howPay;
-    private int numberOfPeople;
+    private DateInterval dateInterval;
 
-    public Booking(Guest guest, Room room, Date checkIn, Date checkOut, typeOfPay howPay, int howManyPeople) {
+
+    public Booking(Guest guest, Room room, DateInterval dateInterval) {
         this.guest = guest;
         this.room = room;
-        this.checkIn = checkIn;
-        this.checkOut = checkOut;
-        this.howPay = howPay;
-        this.numberOfPeople = getNumberOfPeople();
-    }
-
-    public int getNumberOfPeople() {
-        return numberOfPeople;
-    }
-
-    public void setNumberOfPeople(Room room, int numberOfPeople) {
-        room.setNumberPeople(numberOfPeople);
-        this.numberOfPeople = room.getNumberPeople();
-    }
-
-    public typeOfPay getHowPay() {
-        return howPay;
-    }
-
-    public void setHowPay(typeOfPay howPay) {
-        this.howPay = howPay;
+        this.dateInterval = dateInterval;
     }
 
     public Guest getGuest() {
@@ -50,7 +27,7 @@ public class Booking {
         return room;
     }
 
-    public void setRoom(Room room) {
+    protected void setRoom(Room room) {
         this.room = room;
     }
 
@@ -58,44 +35,18 @@ public class Booking {
         return paid;
     }
 
-    public void setPaid(boolean paid) {
+    protected void setPaid(boolean paid) {
         this.paid = paid;
     }
 
-    public double getInvoiceAmount() {
-        return invoiceAmount;
-    }
-
-    public void setInvoiceAmount(double invoiceAmount) {
-        this.invoiceAmount = invoiceAmount;
-    }
-
-    public Date getCheckIn() {
-        return checkIn;
-    }
-
-    public void setCheckIn(Date checkIn) {
-        this.checkIn = checkIn;
-    }
-
-    public Date getCheckOut() {
-        return checkOut;
-    }
-
-    public void setCheckOut(Date checkOut) {
-        this.checkOut = checkOut;
+    public double getPrice() {
+        return this.room.getPrice() * this.dateInterval.getDays();
     }
 
     @Override
     public String toString() {
-        return "Booking{" +
-                "guest=" + guest +
-                ", room=" + room +
-                ", paid=" + paid +
-                ", invoiceAmount=" + invoiceAmount +
-                ", checkIn=" + checkIn +
-                ", checkOut=" + checkOut +
-                ", howPay=" + howPay +
-                '}';
+        return "Booking: " + room +
+                ", guest=" + guest +
+                ", " + dateInterval + "\n\tprice for " + dateInterval.getDays() + " days is " + getPrice() + " Euro";
     }
 }

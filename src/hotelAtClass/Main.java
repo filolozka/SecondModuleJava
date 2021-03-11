@@ -1,5 +1,7 @@
 package hotelAtClass;
 
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
         DateInterval test = new DateInterval(
@@ -45,10 +47,9 @@ public class Main {
         );
 
         BookingList bookingList = new ArrayBookingList(2);
-//        bookingList.addBooking(b1);
-//        bookingList.addBooking(b2);
-//        bookingList.addBooking(b3);
-//        bookingList.printBooking();
-
+        bookingList.addBooking(b1);
+        bookingList.addBooking(b2);
+        bookingList.addBooking(b3);
+        bookingList.printBooking();
     }
 }
