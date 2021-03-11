@@ -1,5 +1,7 @@
 package hotel;
 
+
+
 public class DateInterval {
     private Date checkin;
     private Date checkout;
@@ -19,16 +21,58 @@ public class DateInterval {
     }
 
     public int getDays() {
-
-        if (days == 0) {
-            for (int i = checkin.getYear(); i < checkout.getYear(); i++) {
-                days += hotelAtClass.Date.getDaysPerYear(i);
-            }
+        if (checkin.getYear() == checkout.getYear()) {
+            days = getNumberOfDay(checkout.getMonth(), checkout.getYear(), checkout.getDay()) - getNumberOfDay(checkin.getMonth(), checkin.getYear(), checkin.getDay());
         } else {
-           // days -= checkin.daysFromNewYear; надо пошукать, почему не подтягивает
-            // days += checkout.daysFromNewYear;
+            days = (getDayInTheYear(checkin.getYear()) - getNumberOfDay(checkin.getMonth(), checkin.getYear(), checkin.getDay())) + getNumberOfDay(checkout.getMonth(), checkout.getYear(), checkout.getDay());
         }
         return days;
+    }
+
+    public int getNumberOfDay(int numberOfMonth, int year, int day) { //метод находит, сколько дней с начала года до указанной даты
+        int daysFromNYtoDate = 0;
+        for (int i = 1; i < numberOfMonth; i++) {
+            switch (i) {
+                case 2:
+                    if (findLeapYear(year)) {
+                        daysFromNYtoDate += 29;
+                    } else {
+                        daysFromNYtoDate += 28;
+                    }
+                    break;
+                case 1:
+                case 3:
+                case 4:
+                case 5:
+                case 6:
+                case 7:
+                    daysFromNYtoDate += 30 + i % 2;
+                    break;
+                case 8:
+                case 9:
+                case 10:
+                case 11:
+                case 12:
+                    daysFromNYtoDate += 30 + ((i + 1) % 2);
+                    break;
+            }
+        }
+
+        daysFromNYtoDate += day;
+
+        return daysFromNYtoDate;
+    }
+
+    public boolean findLeapYear(int year) {
+        return (year % 4 == 0) ^ ((year % 100 == 0) & (year % 400 != 0));
+    }
+
+    public int getDayInTheYear(int year){
+        int daysInYear = 365;
+        if (findLeapYear(year)) {
+            daysInYear = 366;
+        }
+        return daysInYear;
     }
 
     @Override
