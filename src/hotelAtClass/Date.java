@@ -1,7 +1,5 @@
 package hotelAtClass;
 
-import java.util.Comparator;
-
 public class Date implements Comparable<Date> {
     private int day;
     private int month;
@@ -27,15 +25,15 @@ public class Date implements Comparable<Date> {
 
     @Override
     public String toString() {
-        return day + "." + month + "." + year;
+        return day + "-" + month + "-" + year;
     }
 
     public static boolean isLeapYear(int year) {
-        return year % 400 == 0 || (year % 4 == 0 && year % 100 != 0);   //чтобы можно было проверять из другого класса, даже когда нет еще объекта
+        return year % 400 == 0 || (year % 4 == 0 && year % 100 != 0);
     }
 
     public boolean isLeapYear() {
-        return isLeapYear(this.year); //из статического метода обратиться к параметрам объекта нельзя - надо создать экзепляр, а наоборот можно
+        return isLeapYear(this.year);
     }
 
     private static boolean checkMonth(int month) {
@@ -55,29 +53,43 @@ public class Date implements Comparable<Date> {
         }
     }
 
+    public int getDayPerMonth() {
+        return getDayPerMonth(this.month, this.year);
+    }
+
+
     public int daysFromNewYear() {
         int rez = 0;
         for (int i = 1; i < this.month; i++) {
-            rez += getDayPerMonth(this.month, this.year);
+            rez += getDayPerMonth(i, this.year);
         }
         rez += this.day;
         return rez;
     }
 
-    public int daysToNewYear(){
+    public int daysToNewYear() {
         return getDaysPerYear() - this.daysFromNewYear();
     }
 
-    public static int getDaysPerYear(int year){
+    public static int getDaysPerYear(int year) {
         return (isLeapYear(year) ? 366 : 365);
     }
 
-    public int getDaysPerYear(){
+    public int getDaysPerYear() {
         return getDaysPerYear(this.year);
     }
 
-    public int getDayPerMonth() {
-        return getDayPerMonth(this.month, this.year);
+    @Override
+    public int compareTo(Date o) {
+        int dateComparing = this.day - o.day;
+        int monthComparing = this.month - o.month;
+        int yearComparing = this.year - o.year;
+
+        if (dateComparing == 0 && monthComparing == 0 && yearComparing == 0) {
+            return 0;
+        } else {
+            return -1;
+        }
     }
 
     @Override

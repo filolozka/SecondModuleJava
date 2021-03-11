@@ -77,6 +77,6 @@ public class DateInterval {
 
     @Override
     public String toString() {
-        return "[" + checkin + "-" + checkout + "]"; //если скобки одинарные - это char
+        return "[" + checkin + "-" + checkout + "]"; 
     }
 }
